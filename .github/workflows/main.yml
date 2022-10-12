@@ -57,6 +57,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           scripts: |
-          sudo docker pull sonikk666/infra_actions
-          sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 sonikk666/infra_actions
+            sudo docker pull sonikk666/infra_actions
+            sudo docker stop $(sudo docker ps -a -q)
+            sudo docker run --rm -d -p 5000:5000 sonikk666/infra_actions

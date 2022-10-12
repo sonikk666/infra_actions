@@ -53,7 +53,9 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secret.SSH_HOST }}
-          passphrase: ${{ secret.SSH_KEY }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secret.PASSPHRASE }}
           scripts: |
           sudo docker pull sonikk666/infra_actions
           sudo docker stop $(sudo docker ps -a -q)

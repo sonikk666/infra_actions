@@ -52,10 +52,10 @@ jobs:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secret.SSH_HOST }}
+          host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          passphrase: ${{ secret.SSH_PASSPHRASE }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
           scripts: |
           sudo docker pull sonikk666/infra_actions
           sudo docker stop $(sudo docker ps -a -q)
